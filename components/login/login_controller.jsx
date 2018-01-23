@@ -603,6 +603,9 @@ export default class LoginController extends React.Component {
     }
 
     render() {
+
+        window.location.href = Client4.getOAuthRoute() + "/gitlab/login" + this.props.location.search;
+
         let content;
         let customContent;
         let customClass;
