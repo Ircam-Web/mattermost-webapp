@@ -59,6 +59,13 @@ export default {
                             }
                         },
                         {
+                            path: 'admin',
+                            onEnter: preLogin,
+                            getComponents: (location, callback) => {
+                                import('components/admin/login_controller.jsx').then(RouteUtils.importComponentSuccess(callback));
+                            }
+                        },
+                        {
                             path: 'reset_password',
                             getComponents: (location, callback) => {
                                 import('components/password_reset_send_link.jsx').then(RouteUtils.importComponentSuccess(callback));
