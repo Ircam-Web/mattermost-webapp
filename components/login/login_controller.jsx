@@ -639,7 +639,7 @@ export default class LoginController extends React.Component {
 
         return (
             <div>
-                <AnnouncementBar/>
+                {/*<AnnouncementBar/>
                 <div className='col-sm-12'>
                     <div className={'signup-team__container ' + customClass}>
                         <div className='signup__markdown'>
@@ -657,7 +657,7 @@ export default class LoginController extends React.Component {
                             {content}
                         </div>
                     </div>
-                </div>
+                </div>*/}
             </div>
         );
     }
