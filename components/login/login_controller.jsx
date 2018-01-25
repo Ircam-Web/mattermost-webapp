@@ -388,54 +388,54 @@ export default class LoginController extends React.Component {
                 </span>);
             }
 
-            loginControls.push(
-                <form
-                    key='loginBoxes'
-                    onSubmit={this.preSubmit}
-                >
-                    <div className='signup__email-container'>
-                        <FormError
-                            error={this.state.serverError}
-                            margin={true}
-                        />
-                        <div className={'form-group' + errorClass}>
-                            <input
-                                id='loginId'
-                                className='form-control'
-                                ref='loginId'
-                                name='loginId'
-                                value={this.state.loginId}
-                                onChange={this.handleLoginIdChange}
-                                placeholder={this.createLoginPlaceholder()}
-                                spellCheck='false'
-                                autoCapitalize='off'
-                            />
-                        </div>
-                        <div className={'form-group' + errorClass}>
-                            <input
-                                id='loginPassword'
-                                type='password'
-                                className='form-control'
-                                ref='password'
-                                name='password'
-                                value={this.state.password}
-                                onChange={this.handlePasswordChange}
-                                placeholder={Utils.localizeMessage('login.password', 'Password')}
-                                spellCheck='false'
-                            />
-                        </div>
-                        <div className='form-group'>
-                            <button
-                                id='loginButton'
-                                type='submit'
-                                className='btn btn-primary'
-                            >
-                                { loginButton }
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            );
+            //loginControls.push(
+                // <form
+                //     key='loginBoxes'
+                //     onSubmit={this.preSubmit}
+                // >
+                //     <div className='signup__email-container'>
+                //         <FormError
+                //             error={this.state.serverError}
+                //             margin={true}
+                //         />
+                //         <div className={'form-group' + errorClass}>
+                //             <input
+                //                 id='loginId'
+                //                 className='form-control'
+                //                 ref='loginId'
+                //                 name='loginId'
+                //                 value={this.state.loginId}
+                //                 onChange={this.handleLoginIdChange}
+                //                 placeholder={this.createLoginPlaceholder()}
+                //                 spellCheck='false'
+                //                 autoCapitalize='off'
+                //             />
+                //         </div>
+                //         <div className={'form-group' + errorClass}>
+                //             <input
+                //                 id='loginPassword'
+                //                 type='password'
+                //                 className='form-control'
+                //                 ref='password'
+                //                 name='password'
+                //                 value={this.state.password}
+                //                 onChange={this.handlePasswordChange}
+                //                 placeholder={Utils.localizeMessage('login.password', 'Password')}
+                //                 spellCheck='false'
+                //             />
+                //         </div>
+                //         <div className='form-group'>
+                //             <button
+                //                 id='loginButton'
+                //                 type='submit'
+                //                 className='btn btn-primary'
+                //             >
+                //                 { loginButton }
+                //             </button>
+                //         </div>
+                //     </div>
+                // </form>
+            //);
         }
 
         if (global.window.mm_config.EnableOpenServer === 'true' && this.checkSignUpEnabled()) {
@@ -465,33 +465,33 @@ export default class LoginController extends React.Component {
         }
 
         if (usernameSigninEnabled || emailSigninEnabled) {
-            loginControls.push(
-                <div
-                    key='forgotPassword'
-                    className='form-group'
-                >
-                    <Link to={'/reset_password'}>
-                        <FormattedMessage
-                            id='login.forgot'
-                            defaultMessage='I forgot my password'
-                        />
-                    </Link>
-                </div>
-            );
+            // loginControls.push(
+            //     <div
+            //         key='forgotPassword'
+            //         className='form-group'
+            //     >
+            //         <Link to={'/reset_password'}>
+            //             <FormattedMessage
+            //                 id='login.forgot'
+            //                 defaultMessage='I forgot my password'
+            //             />
+            //         </Link>
+            //     </div>
+            // );
         }
 
         if ((emailSigninEnabled || usernameSigninEnabled || ldapEnabled) && (gitlabSigninEnabled || googleSigninEnabled || samlSigninEnabled || office365SigninEnabled)) {
-            loginControls.push(
-                <div
-                    key='divider'
-                    className='or__container'
-                >
-                    <FormattedMessage
-                        id='login.or'
-                        defaultMessage='or'
-                    />
-                </div>
-            );
+            // loginControls.push(
+            //     <div
+            //         key='divider'
+            //         className='or__container'
+            //     >
+            //         <FormattedMessage
+            //             id='login.or'
+            //             defaultMessage='or'
+            //         />
+            //     </div>
+            // );
 
             loginControls.push(
                 <h5 key='oauthHeader'>
@@ -511,13 +511,12 @@ export default class LoginController extends React.Component {
                     href={Client4.getOAuthRoute() + '/gitlab/login' + this.props.location.search}
                 >
                     <span>
-                        <span className='icon'/>
                         <span>
                             <FormattedMessage
                                 id='login.gitlab'
-                                defaultMessage='GitLab'
+                                defaultMessage='Ircam Connect'
                             />
-                        </span>
+                        </span> 
                     </span>
                 </a>
             );
@@ -606,6 +605,7 @@ export default class LoginController extends React.Component {
         let content;
         let customContent;
         let customClass;
+        this.state.showMfa = false;
         if (this.state.showMfa) {
             content = (
                 <LoginMfa

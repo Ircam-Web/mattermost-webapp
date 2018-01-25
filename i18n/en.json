@@ -1842,7 +1842,7 @@
   "login.email": "Email",
   "login.find": "Find your other teams",
   "login.forgot": "I forgot my password",
-  "login.gitlab": "GitLab",
+  "login.gitlab": "Ircam Connect",
   "login.google": "Google Apps",
   "login.invalidPassword": "Your password is incorrect.",
   "login.ldapUsername": "AD/LDAP Username",

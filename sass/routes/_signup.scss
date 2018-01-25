@@ -223,15 +223,15 @@
 
         &.btn-custom-login {
             @include border-radius(2px);
-            color: $white;
+            color: $black;
             display: block;
-            height: 40px;
+            height: 60px;
             line-height: 36px;
             margin: 1em 0;
             min-width: 200px;
-            padding: 0 1em 0 2em;
-            text-align: left;
-            width: 200px;
+            padding: 0 1em 0 1em;
+            text-align: center;
+            width: 310px;
 
             > span {
                 position: relative;
@@ -246,10 +246,10 @@
             }
 
             &.gitlab {
-                background: #554488;
-
+                background: #f8e71c;
+                font-size: 2em;
                 &:hover {
-                    background: darken(#554488, 10%);
+                    background: darken(#f8e71c, 10%);
                 }
 
                 .icon {
